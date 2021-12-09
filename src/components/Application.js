@@ -1,8 +1,6 @@
-import React from "react";
-import { useState } from "react";
-
-import "components/Application.scss";
+import React, { useState } from "react";
 import DayList from "./DayList";
+import "components/Application.scss";
 
 const days = [
   {
@@ -24,12 +22,10 @@ const days = [
 
 export default function Application(props) {
   const [day, setDay] = useState("Monday");
-  //console.log(day);
-
+  // console.log(day);
   return (
     <main className="layout">
       <section className="sidebar">
-        {/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
         <img
           className="sidebar--centered"
           src="images/logo.png"
@@ -37,7 +33,7 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList days={days} day={day} setDay={setDay} />
+          <DayList days={days} value={day} onChange={setDay} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
