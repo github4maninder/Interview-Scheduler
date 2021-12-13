@@ -7,6 +7,15 @@ export function getAppointmentsForDay(state, day) {
   }
 }
 
+export function getInterviewersForDay(state, day) {
+  const filteredDay = state.days.find((dayOfDays) => dayOfDays.name === day);
+  if (!state.days.length || !filteredDay) {
+    return [];
+  } else {
+    return filteredDay.interviewers.map((id) => state.interviewers[id]);
+  }
+}
+
 export function getInterview(state, interview) {
   if (interview) {
     return {
