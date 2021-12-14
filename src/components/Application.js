@@ -18,6 +18,23 @@ export default function Application(props) {
     interviewers: {},
   });
 
+  // -- updating the state object starting at lowest level
+  function bookInterview(id, interview) {
+    console.log(id, interview);
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview },
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment,
+    };
+    setState({
+      ...state,
+      appointments,
+    });
+  }
+
   // -- returning array of appointment objects
   const dailyAppointments = getAppointmentsForDay(state, state.day);
 
@@ -32,6 +49,7 @@ export default function Application(props) {
         time={appointment.time}
         interview={interview}
         interviewers={interviewers}
+        bookInterview={bookInterview}
       />
     );
   });
@@ -54,7 +72,6 @@ export default function Application(props) {
         interviewers: all[2].data,
       }));
       console.log(all);
-      // setDays(response.data)
     });
   }, []);
 
