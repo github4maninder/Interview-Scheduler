@@ -4,7 +4,6 @@ import Header from "./Header";
 import Show from "./Show";
 import Empty from "./Empty";
 import useVisualMode from "hooks/useVisualMode";
-import { moduleExpression } from "@babel/types";
 import Form from "./Form";
 import Status from "./Status";
 import Confirm from "./Confirm";
@@ -40,7 +39,7 @@ export default function Appointment(props) {
       .catch(() => transition(ERROR_SAVE, true));
   }
 
-  function deleteFunc(name, interviewer) {
+  function deleteFunc() {
     transition(DELETING, true);
     props
       .cancelInterview(props.id)
@@ -69,7 +68,6 @@ export default function Appointment(props) {
         <Form
           interviewers={props.interviewers}
           student={props.interview.student}
-          // interviewer={props.interview.interviewer.id}
           onCancel={() => back(SHOW)}
           onSave={save}
         />
