@@ -42,7 +42,6 @@ export default function useApplicationData() {
       spots,
     };
     days[dayIndex] = newDay;
-    // return days array
 
     return axios.put(`/api/appointments/${id}`, appointment).then(() => {
       setState((prev) => ({ ...prev, appointments, days }));
