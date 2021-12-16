@@ -6,7 +6,9 @@ Interview Scheduler is a single-page application (SPA) that allows users to book
 
 ### Final Product
 ## Main page
-!['Home Page'](docs/InterviewSchedulerHome.gif)
+!['Home Page'](docs/Main.gif)
+!['Select'](docs/InterviewSchedulerHome.gif)
+!['Error'](docs/Error.gif)
 
 ### User Stories
 
