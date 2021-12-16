@@ -30,6 +30,8 @@ describe("Appointments", () => {
     cy.contains(".appointment__card--show", "Tori Malcolm");
   });
   it("should cancel an interview", () => {
-
+    cy.get("[alt=Delete]")
+    .first()
+    .click({ force: true });
   })
 });
