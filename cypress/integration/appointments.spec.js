@@ -25,5 +25,6 @@ describe("Appointments", () => {
       .type("Lydia Miller-Jones");
 
     cy.get('[alt="Tori Malcolm"]').click();
+    cy.contains("Save").click();
   });
 });
