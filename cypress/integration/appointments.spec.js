@@ -35,5 +35,6 @@ describe("Appointments", () => {
     cy.contains("Confirm").click();
     cy.contains("Deleting").should("exist");
     cy.contains("Deleting").should("not.exist");
+    cy.contains(".appointment__card--show", "Archie Cohen").should("not.exist");
   });
 });
