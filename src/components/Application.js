@@ -43,7 +43,7 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList days={state.days} day={state.day} onChange={setDay} />
+          <DayList days={state.days} onChange={setDay} value={state.day} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
@@ -54,7 +54,7 @@ export default function Application(props) {
 
       <section className="schedule">
         {schedule}
-        <Appointment key="last" time="5pm" />
+        <Appointment key="last" time="5pm"  />
       </section>
     </main>
   );
